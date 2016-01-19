@@ -1,0 +1,50 @@
+name       : peerunity
+version    : 0.1.3.1
+release    : 1
+source     :
+    - https://github.com/Peerunity/Peerunity/archive/v0.1.3-RC1.tar.gz : b82442fbfb1ceef4874b2d11c6b5a0e60de87b754bec58881f847bf30811508c
+license    : MIT
+summary    : Peerunity is a Peercoin network-compatible, community-developed wallet client.
+description: |
+    Peerunity is a Peercoin network-compatible, community-developed wallet client.
+clang : no
+builddeps  :
+    - pkgconfig(libevent)
+    - pkgconfig(libqrencode)
+    - pkgconfig(libssl)
+    - pkgconfig(protobuf)
+    - pkgconfig(QtGui)
+    - db4.8-devel
+    - libboost-devel
+libsplit: no
+build      : |
+    ln -s /usr/bin/lrelease-qt4 /usr/bin/lrelease
+    ln -s /usr/bin/moc-qt4 /usr/bin/moc
+    ln -s /usr/bin/qmake-qt4 /usr/bin/qmake
+    ln -s /usr/bin/rcc-qt4 /usr/bin/rcc
+    ln -s /usr/bin/uic-qt4 /usr/bin/uic
+    cd src
+    %make -f makefile.unix \
+        BDB_INCLUDE_PATH="/usr/include/db4.8" \
+        BDB_LIB_SUFFIX="-4.8" \
+        "USE_IPV6=1" \
+        "USE_QRCODE=1" \
+        "USE_UPNP=-"
+    cd ../
+    qmake-qt4 \
+        BDB_INCLUDE_PATH="/usr/include/db4.8" \
+        BDB_LIB_SUFFIX="-4.8" \
+        "USE_IPV6=1" \
+        "USE_QRCODE=1" \
+        "USE_UPNP=-" \
+        peerunity.pro
+    %make
+install    : |
+    install -Dm644 $srcdir/contrib/debian/examples/bitcoin.conf $installdir/usr/share/doc/peerunity/examples/peerunity.conf
+    install -Dm644 $srcdir/contrib/debian/manpages/bitcoind.1 $installdir/usr/share/man/man1/peerunityd.1
+    install -Dm644 $srcdir/contrib/debian/manpages/bitcoin.conf.5 $installdir/usr/share/man/man5/peerunity.conf.5
+    install -Dm644 $pkgfiles/peerunity128.png $installdir/usr/share/pixmaps/peerunity128.png
+    install -Dm755 $srcdir/peerunity $installdir/usr/bin/peerunity
+    install -Dm755 $srcdir/src/peerunityd $installdir/usr/bin/peerunityd
+    install -Dm644 $pkgfiles/peerunity.desktop $installdir/usr/share/applications/peerunity.desktop
+    install -Dm644 $pkgfiles/peerunityd@.service  $installdir/usr/lib/systemd/system/peerunity@.service
