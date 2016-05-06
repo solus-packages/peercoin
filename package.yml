@@ -1,8 +1,8 @@
 name       : peerunity
-version    : 0.2.1
-release    : 3
+version    : 0.2.2
+release    : 4
 source     :
-    - https://github.com/Peerunity/Peerunity/archive/v0.2.1.tar.gz : b76ed814f19d7c2474801e4846c267a44059e09224f63ffe8686923c3d2deb31
+    - https://github.com/Peerunity/Peerunity/archive/v0.2.2.tar.gz : 353079447ef2f03cfa740a23307e9b07240da12c6bb067cf1bf42347c887d210
 license    : MIT
 component  : network.clients
 summary    : Peerunity is a Peercoin network-compatible, community-developed wallet client.
