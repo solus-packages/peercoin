@@ -1,14 +1,15 @@
 name       : peerunity
 version    : 0.2.2
-release    : 4
+release    : 5
 source     :
     - https://github.com/Peerunity/Peerunity/archive/v0.2.2.tar.gz : 353079447ef2f03cfa740a23307e9b07240da12c6bb067cf1bf42347c887d210
 license    : MIT
 component  : network.clients
-summary    : Peerunity is a Peercoin network-compatible, community-developed wallet client.
+summary    : Peerunity is a Peercoin network-compatible, community-developed wallet
+    client.
 description: |
     Peerunity is a Peercoin network-compatible, community-developed wallet client.
-clang : no
+clang      : no
 builddeps  :
     - pkgconfig(libevent)
     - pkgconfig(libqrencode)
@@ -17,7 +18,9 @@ builddeps  :
     - pkgconfig(QtGui)
     - db4.8-devel
     - libboost-devel
-libsplit: no
+libsplit   : no
+setup      : |
+    %patch -p1 < $pkgfiles/gcc6.patch
 build      : |
     ln -s /usr/bin/lrelease-qt4 /usr/bin/lrelease
     ln -s /usr/bin/moc-qt4 /usr/bin/moc
