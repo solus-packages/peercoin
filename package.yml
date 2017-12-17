@@ -1,54 +1,45 @@
-name       : peerunity
-version    : 0.2.2
-release    : 5
+name       : peercoin
+version    : 0.6.1
+release    : 8
 source     :
-    - https://github.com/Peerunity/Peerunity/archive/v0.2.2.tar.gz : 353079447ef2f03cfa740a23307e9b07240da12c6bb067cf1bf42347c887d210
+    - https://github.com/peercoin/peercoin/archive/v0.6.1ppc.tar.gz : d4fa31e4323f70e4b11d943734a2a5a0891b48895c1940636022a2fe39eed36f
 license    : MIT
 component  : network.clients
-summary    : Peerunity is a Peercoin network-compatible, community-developed wallet
-    client.
+summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 description: |
-    Peerunity is a Peercoin network-compatible, community-developed wallet client.
-clang      : no
+    Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
+
+    Peercoin is based on Bitcoin, while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
+replaces   :
+    - peerunity
 builddeps  :
+    - pkgconfig(gl)
     - pkgconfig(libevent)
     - pkgconfig(libqrencode)
     - pkgconfig(libssl)
     - pkgconfig(protobuf)
-    - pkgconfig(QtGui)
+    - pkgconfig(Qt5Gui)
+    - pkgconfig(Qt5UiTools)
     - db4.8-devel
     - libboost-devel
+    - miniupnpc-devel
 libsplit   : no
 setup      : |
-    %patch -p1 < $pkgfiles/gcc6.patch
+    sed -i 's:/usr/share/pixmaps/peercoin.png:peercoin:g' contrib/debian/peercoin-qt.desktop
 build      : |
-    ln -s /usr/bin/lrelease-qt4 /usr/bin/lrelease
-    ln -s /usr/bin/moc-qt4 /usr/bin/moc
-    ln -s /usr/bin/qmake-qt4 /usr/bin/qmake
-    ln -s /usr/bin/rcc-qt4 /usr/bin/rcc
-    ln -s /usr/bin/uic-qt4 /usr/bin/uic
-    cd src
-    %make -f makefile.unix \
+    %qmake \
         BDB_INCLUDE_PATH="/usr/include/db4.8" \
         BDB_LIB_SUFFIX="-4.8" \
         "USE_IPV6=1" \
         "USE_QRCODE=1" \
-        "USE_UPNP=-"
-    cd ../
-    qmake-qt4 \
-        BDB_INCLUDE_PATH="/usr/include/db4.8" \
-        BDB_LIB_SUFFIX="-4.8" \
-        "USE_IPV6=1" \
-        "USE_QRCODE=1" \
-        "USE_UPNP=-" \
-        peerunity.pro
+        "USE_UPNP=1"
     %make
+    cd src
+    %make -f makefile.unix
 install    : |
-    install -Dm644 $workdir/contrib/debian/examples/bitcoin.conf $installdir/usr/share/doc/peerunity/examples/peerunity.conf
-    install -Dm644 $workdir/contrib/debian/manpages/bitcoind.1 $installdir/usr/share/man/man1/peerunityd.1
-    install -Dm644 $workdir/contrib/debian/manpages/bitcoin.conf.5 $installdir/usr/share/man/man5/peerunity.conf.5
-    install -Dm644 $pkgfiles/peerunity128.png $installdir/usr/share/pixmaps/peerunity128.png
-    install -Dm755 $workdir/peerunity $installdir/usr/bin/peerunity
-    install -Dm755 $workdir/src/peerunityd $installdir/usr/bin/peerunityd
-    install -Dm644 $pkgfiles/peerunity.desktop $installdir/usr/share/applications/peerunity.desktop
-    install -Dm644 $pkgfiles/peerunityd@.service  $installdir/usr/lib/systemd/system/peerunity@.service
+    install -Dm755 $workdir/peercoin-qt $installdir/usr/bin/peercoin-qt
+    install -Dm755 $workdir/src/peercoind $installdir/usr/bin/peercoind
+    install -Dm644 $workdir/contrib/debian/peercoin-qt.desktop $installdir/usr/share/applications/peercoin-qt.desktop
+    install -Dm644 share/pixmaps/peercoin256.png $installdir/usr/share/pixmaps/peercoin.png
+    install -Dm644 $workdir/contrib/debian/examples/bitcoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
+    install -Dm644 $pkgfiles/peercoind@.service  $installdir/usr/lib/systemd/system/peercoind@.service
