@@ -1,8 +1,8 @@
 name       : peercoin
-version    : 0.6.1
-release    : 8
+version    : 0.6.2
+release    : 9
 source     :
-    - https://github.com/peercoin/peercoin/archive/v0.6.1ppc.tar.gz : d4fa31e4323f70e4b11d943734a2a5a0891b48895c1940636022a2fe39eed36f
+    - https://github.com/peercoin/peercoin/archive/v0.6.2ppc.tar.gz : d64a8fdcd874d2e211f5dd3002e187769b3ec656f985f538ea0510f1b58ac2b6
 license    : MIT
 component  : network.clients
 summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
@@ -41,5 +41,5 @@ install    : |
     install -Dm755 $workdir/src/peercoind $installdir/usr/bin/peercoind
     install -Dm644 $workdir/contrib/debian/peercoin-qt.desktop $installdir/usr/share/applications/peercoin-qt.desktop
     install -Dm644 share/pixmaps/peercoin256.png $installdir/usr/share/pixmaps/peercoin.png
-    install -Dm644 $workdir/contrib/debian/examples/bitcoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
+    install -Dm644 $workdir/contrib/debian/examples/peercoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
     install -Dm644 $pkgfiles/peercoind@.service  $installdir/usr/lib/systemd/system/peercoind@.service
