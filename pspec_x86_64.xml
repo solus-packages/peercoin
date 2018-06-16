@@ -2,8 +2,8 @@
     <Source>
         <Name>peercoin</Name>
         <Packager>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>network.clients</PartOf>
@@ -23,10 +23,11 @@ Peercoin is based on Bitcoin, while introducing many important innovations to cr
 </Description>
         <PartOf>network.clients</PartOf>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/bin/peercoin-qt</Path>
+            <Path fileType="executable">/usr/bin/peercoind</Path>
             <Path fileType="library">/usr/lib/systemd/system/peercoind@.service</Path>
             <Path fileType="data">/usr/share/applications/peercoin-qt.desktop</Path>
-            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="doc">/usr/share/doc/peercoin/examples/peercoin.conf</Path>
             <Path fileType="data">/usr/share/pixmaps/peercoin.png</Path>
         </Files>
         <Replaces>
@@ -34,12 +35,12 @@ Peercoin is based on Bitcoin, while introducing many important innovations to cr
         </Replaces>
     </Package>
     <History>
-        <Update release="10">
-            <Date>2018-03-31</Date>
+        <Update release="11">
+            <Date>2018-06-16</Date>
             <Version>0.6.2</Version>
             <Comment>Packaging update</Comment>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Update>
     </History>
 </PISI>

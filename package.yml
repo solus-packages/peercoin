@@ -1,6 +1,6 @@
 name       : peercoin
 version    : 0.6.2
-release    : 10
+release    : 11
 source     :
     - https://github.com/peercoin/peercoin/archive/v0.6.2ppc.tar.gz : d64a8fdcd874d2e211f5dd3002e187769b3ec656f985f538ea0510f1b58ac2b6
 license    : MIT
