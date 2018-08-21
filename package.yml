@@ -1,13 +1,11 @@
 name       : peercoin
-version    : 0.6.2
-release    : 11
+version    : 0.6.3
+release    : 12
 source     :
-    - https://github.com/peercoin/peercoin/archive/v0.6.2ppc.tar.gz : d64a8fdcd874d2e211f5dd3002e187769b3ec656f985f538ea0510f1b58ac2b6
+    - https://github.com/peercoin/peercoin/archive/v0.6.3ppc.tar.gz : bf48a38760d84804e406fc71461c6148c4764a9f576e3f968ab7a22e064714ca
 license    : MIT
 component  : network.clients
-summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake
-    consensus as a security model, with a combined proof-of-stake/proof-of-work minting
-    system.
+summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 description: |
     Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 
@@ -27,7 +25,7 @@ builddeps  :
     - miniupnpc-devel
 libsplit   : no
 setup      : |
-    sed -i 's:/usr/share/pixmaps/peercoin.png:peercoin:g' contrib/debian/peercoin-qt.desktop
+    sed -i 's:/usr/share/pixmaps/peercoin128.png:peercoin:g' contrib/debian/peercoin-qt.desktop
 build      : |
     %qmake \
         BDB_INCLUDE_PATH="/usr/include/db4.8" \
