@@ -1,8 +1,8 @@
 name       : peercoin
-version    : 0.6.4
-release    : 13
+version    : 0.7.1
+release    : 14
 source     :
-    - https://github.com/peercoin/peercoin/archive/v0.6.4ppc.tar.gz : 7ff245911146a146877da44d0e0828dd9ef50b97feda34a218ed4e936dc8733f
+    - https://github.com/peercoin/peercoin/archive/v0.7.1ppc.tar.gz : 1c2aae8870300f9f56b46e886a6b4501d032e7f0ec85db3e08ab5a2b7cf1090a
 license    : MIT
 component  : network.clients
 summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
@@ -21,6 +21,7 @@ builddeps  :
     - pkgconfig(Qt5Gui)
     - pkgconfig(Qt5UiTools)
     - db4.8-devel
+    - db5-devel
     - libboost-devel
     - miniupnpc-devel
 libsplit   : no
