@@ -12,7 +12,7 @@
 
 Peercoin is based on Bitcoin, while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
 </Description>
-        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
     </Source>
     <Package>
         <Name>peercoin</Name>
@@ -35,9 +35,9 @@ Peercoin is based on Bitcoin, while introducing many important innovations to cr
         </Replaces>
     </Package>
     <History>
-        <Update release="15">
-            <Date>2019-03-18</Date>
-            <Version>0.7.2</Version>
+        <Update release="16">
+            <Date>2019-05-07</Date>
+            <Version>0.7.3</Version>
             <Comment>Packaging update</Comment>
             <Name>Joshua Strobl</Name>
             <Email>joshua@stroblindustries.com</Email>
