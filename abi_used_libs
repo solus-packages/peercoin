@@ -1,4 +1,5 @@
 ld-linux-x86-64.so.2
+libGL.so.1
 libQt5Core.so.5
 libQt5Gui.so.5
 libQt5Network.so.5
@@ -11,10 +12,13 @@ libc.so.6
 libcrypto.so.1.0.0
 libdb_cxx-4.8.so
 libdb_cxx-5.3.so
+libdl.so.2
 libgcc_s.so.1
 libm.so.6
-libminiupnpc.so.16
+libminiupnpc.so.17
 libpthread.so.0
 libqrencode.so.4
+librt.so.1
 libssl.so.1.0.0
 libstdc++.so.6
+libz.so.1
