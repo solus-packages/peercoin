@@ -1,13 +1,11 @@
 name       : peercoin
-version    : 0.7.3
-release    : 17
+version    : 0.8.2
+release    : 18
 source     :
-    - https://github.com/peercoin/peercoin/archive/v0.7.3ppc.tar.gz : 0a3f6f9a739eb44c2f5d124b4cec301cf4ff20b944f247fcae0bf435b89a5980
+    - https://github.com/peercoin/peercoin/archive/v0.8.2ppc.tar.gz : 71576de845d1a62aa0707a49bb9c0020323b564e6cea19751cbdd0a8ee0d1e1c
 license    : MIT
 component  : network.clients
-summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake
-    consensus as a security model, with a combined proof-of-stake/proof-of-work minting
-    system.
+summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 description: |
     Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 
@@ -29,19 +27,12 @@ builddeps  :
 libsplit   : no
 setup      : |
     sed -i 's:/usr/share/pixmaps/peercoin128.png:peercoin:g' contrib/debian/peercoin-qt.desktop
+    %autogen --disable-static --enable-upnp-default
 build      : |
-    %qmake \
-        BDB_INCLUDE_PATH="/usr/include/db4.8" \
-        BDB_LIB_SUFFIX="-4.8" \
-        "USE_IPV6=1" \
-        "USE_QRCODE=1" \
-        "USE_UPNP=1"
     %make
-    cd src
-    %make -f makefile.unix
 install    : |
-    install -Dm755 $workdir/peercoin-qt $installdir/usr/bin/peercoin-qt
-    install -Dm755 $workdir/src/peercoind $installdir/usr/bin/peercoind
+    %make_install
+    rm -rf $installdir/usr/{bin/bench_bitcoin,include,lib64/pkgconfig}
     install -Dm644 $workdir/contrib/debian/peercoin-qt.desktop $installdir/usr/share/applications/peercoin-qt.desktop
     install -Dm644 share/pixmaps/peercoin256.png $installdir/usr/share/pixmaps/peercoin.png
     install -Dm644 $workdir/contrib/debian/examples/peercoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
