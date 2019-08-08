@@ -1,8 +1,8 @@
 name       : peercoin
-version    : 0.8.2
-release    : 18
+version    : 0.8.2.1
+release    : 19
 source     :
-    - https://github.com/peercoin/peercoin/archive/v0.8.2ppc.tar.gz : 71576de845d1a62aa0707a49bb9c0020323b564e6cea19751cbdd0a8ee0d1e1c
+    - https://github.com/peercoin/peercoin/archive/v0.8.2.1ppc.tar.gz : 323e04ac00cc23b2c4e4cd18283102c8790eeeac9b43006d7acaf33fd594297f
 license    : MIT
 component  : network.clients
 summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
