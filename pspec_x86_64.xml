@@ -2,8 +2,8 @@
     <Source>
         <Name>peercoin</Name>
         <Packager>
-            <Name>Joshua Strobl</Name>
-            <Email>joshua@stroblindustries.com</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Packager>
         <License>MIT</License>
         <PartOf>network.clients</PartOf>
@@ -44,12 +44,12 @@ Peercoin is based on Bitcoin, while introducing many important innovations to cr
         </Replaces>
     </Package>
     <History>
-        <Update release="20">
-            <Date>2019-08-30</Date>
+        <Update release="21">
+            <Date>2019-11-14</Date>
             <Version>0.8.3</Version>
             <Comment>Packaging update</Comment>
-            <Name>Joshua Strobl</Name>
-            <Email>joshua@stroblindustries.com</Email>
+            <Name>Joey Riches</Name>
+            <Email>josephriches@gmail.com</Email>
         </Update>
     </History>
 </PISI>
