@@ -17,7 +17,7 @@ libevent_pthreads-2.1.so.7
 libgcc_s.so.1
 libm.so.6
 libminiupnpc.so.17
-libprotobuf.so.17
+libprotobuf.so.22
 libpthread.so.0
 libqrencode.so.4
 libstdc++.so.6
