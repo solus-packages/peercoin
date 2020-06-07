@@ -1,12 +1,11 @@
 name       : peercoin
 version    : 0.8.3
-release    : 22
+release    : 23
 source     :
     - https://github.com/peercoin/peercoin/archive/v0.8.3ppc.tar.gz : c5ab81636ed19b0a455e3d5ffa41a590777f50a5fd46bae3e4df509b4b90cf6e
 license    : MIT
 component  : network.clients
-summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting
-    system.
+summary    : Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 description: |
     Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 
@@ -14,7 +13,6 @@ description: |
 replaces   :
     - peerunity
 builddeps  :
-    - pkgconfig(gl)
     - pkgconfig(libevent)
     - pkgconfig(libqrencode)
     - pkgconfig(libssl)
