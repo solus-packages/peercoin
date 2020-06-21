@@ -1,6 +1,6 @@
 name       : peercoin
 version    : 0.9.0
-release    : 24
+release    : 25
 source     :
     - https://github.com/peercoin/peercoin/archive/v0.9.0ppc.tar.gz : 95f4d50706f0eb2c14e3f3b149cbb3e7bfbc71ea33ef3e778dc9a477841a35b5
 license    : MIT
@@ -25,6 +25,8 @@ builddeps  :
     - miniupnpc-devel
 libsplit   : no
 setup      : |
+    %patch -p1 < $pkgfiles/0001-Add-missing-include.patch
+
     sed -i 's:/usr/share/pixmaps/peercoin128.png:peercoin:g' contrib/debian/peercoin-qt.desktop
     %autogen --disable-static --enable-upnp-default
 build      : |
@@ -32,7 +34,7 @@ build      : |
 install    : |
     %make_install
     rm -rf $installdir/usr/{bin/bench_bitcoin,include,lib64/pkgconfig}
-    install -Dm644 $workdir/contrib/debian/peercoin-qt.desktop $installdir/usr/share/applications/peercoin-qt.desktop
-    install -Dm644 share/pixmaps/peercoin256.png $installdir/usr/share/pixmaps/peercoin.png
-    install -Dm644 $workdir/contrib/debian/examples/peercoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
-    install -Dm644 $pkgfiles/peercoind@.service  $installdir/usr/lib/systemd/system/peercoind@.service
+    install -Dm00644 $workdir/contrib/debian/peercoin-qt.desktop $installdir/usr/share/applications/peercoin-qt.desktop
+    install -Dm00644 share/pixmaps/peercoin256.png $installdir/usr/share/pixmaps/peercoin.png
+    install -Dm00644 $workdir/contrib/debian/examples/peercoin.conf $installdir/usr/share/doc/peercoin/examples/peercoin.conf
+    install -Dm00644 $pkgfiles/peercoind@.service  $installdir/usr/lib/systemd/system/peercoind@.service
