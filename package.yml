@@ -1,6 +1,6 @@
 name       : peercoin
 version    : 0.9.0
-release    : 25
+release    : 26
 source     :
     - https://github.com/peercoin/peercoin/archive/v0.9.0ppc.tar.gz : 95f4d50706f0eb2c14e3f3b149cbb3e7bfbc71ea33ef3e778dc9a477841a35b5
 license    : MIT
@@ -10,20 +10,20 @@ description: |
     Peercoin is the first cryptocurrency design introducing proof-of-stake consensus as a security model, with a combined proof-of-stake/proof-of-work minting system.
 
     Peercoin is based on Bitcoin, while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
+libsplit   : no
 replaces   :
     - peerunity
 builddeps  :
+    - pkgconfig(Qt5Gui)
+    - pkgconfig(Qt5UiTools)
     - pkgconfig(libevent)
     - pkgconfig(libqrencode)
     - pkgconfig(libssl)
+    - pkgconfig(miniupnpc)
     - pkgconfig(protobuf)
-    - pkgconfig(Qt5Gui)
-    - pkgconfig(Qt5UiTools)
     - db4.8-devel
     - db5-devel
     - libboost-devel
-    - miniupnpc-devel
-libsplit   : no
 setup      : |
     %patch -p1 < $pkgfiles/0001-Add-missing-include.patch
 
