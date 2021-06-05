@@ -97,6 +97,7 @@ libpeercoinconsensus.so.0:_ZN13AES256EncryptC2EPKh
 libpeercoinconsensus.so.0:_ZN13AES256EncryptD1Ev
 libpeercoinconsensus.so.0:_ZN13AES256EncryptD2Ev
 libpeercoinconsensus.so.0:_ZN13arith_uint25610SetCompactEjPbS0_
+libpeercoinconsensus.so.0:_ZN15ECCVerifyHandle8refcountE
 libpeercoinconsensus.so.0:_ZN15ECCVerifyHandleC1Ev
 libpeercoinconsensus.so.0:_ZN15ECCVerifyHandleC2Ev
 libpeercoinconsensus.so.0:_ZN15ECCVerifyHandleD1Ev
@@ -198,6 +199,7 @@ libpeercoinconsensus.so.0:_ZNK9COutPoint8ToStringB5cxx11Ev
 libpeercoinconsensus.so.0:bitcoinconsensus_verify_script
 libpeercoinconsensus.so.0:bitcoinconsensus_verify_script_with_amount
 libpeercoinconsensus.so.0:bitcoinconsensus_version
+libpeercoinconsensus.so.0:peercoinRandseed
 libpeercoinconsensus.so.0:secp256k1_context_clone
 libpeercoinconsensus.so.0:secp256k1_context_create
 libpeercoinconsensus.so.0:secp256k1_context_destroy
@@ -227,3 +229,11 @@ libpeercoinconsensus.so.0:secp256k1_ecdsa_signature_parse_der
 libpeercoinconsensus.so.0:secp256k1_ecdsa_signature_serialize_compact
 libpeercoinconsensus.so.0:secp256k1_ecdsa_signature_serialize_der
 libpeercoinconsensus.so.0:secp256k1_ecdsa_verify
+libpeercoinconsensus.so.0:secp256k1_nonce_function_default
+libpeercoinconsensus.so.0:secp256k1_nonce_function_rfc6979
+peercoin-qt:__bss_start
+peercoin-qt:_edata
+peercoin-qt:_end
+peercoind:__bss_start
+peercoind:_edata
+peercoind:_end
